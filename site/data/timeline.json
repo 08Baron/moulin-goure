@@ -1,7 +1,29 @@
-[
-  { "year": "1750", "title": "Construction du moulin", "text": "Le moulin de Gouré est bâti pour servir les fermes alentour." },
-  { "year": "1889", "title": "Premiers agrandissements", "text": "Ajout d'un second corps de bâtiment pour le stockage du grain." },
-  { "year": "1944", "title": "Arrêt de l'activité", "text": "Le moulin cesse son activité de meunerie." },
-  { "year": "2018", "title": "Début de la restauration", "text": "Une association se forme pour sauver le moulin de la ruine." },
-  { "year": "2026", "title": "Réouverture au public", "text": "Le moulin rouvre ses portes pour des visites régulières." }
-]
+{
+  "events": [
+    {
+      "year": "1750",
+      "title": "Construction du moulin",
+      "text": "Le moulin de Gouré est bâti pour servir les fermes alentour."
+    },
+    {
+      "year": "1889",
+      "title": "Premiers agrandissements",
+      "text": "Ajout d'un second corps de bâtiment pour le stockage du grain."
+    },
+    {
+      "year": "1944",
+      "title": "Arrêt de l'activité",
+      "text": "Le moulin cesse son activité de meunerie."
+    },
+    {
+      "year": "2018",
+      "title": "Début de la restauration",
+      "text": "Une association se forme pour sauver le moulin de la ruine."
+    },
+    {
+      "year": "2026",
+      "title": "Réouverture au public",
+      "text": "Le moulin rouvre ses portes pour des visites régulières."
+    }
+  ]
+}

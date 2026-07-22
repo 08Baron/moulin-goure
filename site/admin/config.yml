@@ -1,0 +1,77 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/img/uploads"
+public_folder: "assets/img/uploads"
+
+locale: "fr"
+
+collections:
+  - name: "reglages"
+    label: "Réglages du site"
+    files:
+      - name: "settings"
+        label: "Logo, cagnotte et réseaux sociaux"
+        file: "data/settings.json"
+        fields:
+          - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Remplace l'icône par défaut dans le menu, sur toutes les pages." }
+          - { label: "Lien vers la cagnotte", name: "cagnotte_lien", widget: "string", required: false }
+          - { label: "Montant actuel collecté (en €, juste le nombre)", name: "cagnotte_montant_actuel", widget: "number", required: false }
+          - { label: "Objectif de la cagnotte (en €, juste le nombre)", name: "cagnotte_objectif", widget: "number", required: false }
+          - { label: "Lien Facebook", name: "facebook", widget: "string", required: false }
+          - { label: "Lien Instagram", name: "instagram", widget: "string", required: false }
+          - { label: "Lien groupe WhatsApp", name: "whatsapp", widget: "string", required: false }
+
+  - name: "vlog"
+    label: "Vlog"
+    files:
+      - name: "vlog"
+        label: "Articles du vlog"
+        file: "data/vlog.json"
+        fields:
+          - name: "posts"
+            label: "Articles"
+            widget: "list"
+            label_singular: "Article"
+            summary: "{{title}} — {{date}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - { label: "Texte", name: "excerpt", widget: "text" }
+              - { label: "Photo", name: "image", widget: "image", required: false }
+
+  - name: "historique"
+    label: "Historique (frise)"
+    files:
+      - name: "historique"
+        label: "Événements de la frise"
+        file: "data/timeline.json"
+        fields:
+          - name: "events"
+            label: "Événements"
+            widget: "list"
+            label_singular: "Événement"
+            summary: "{{year}} — {{title}}"
+            fields:
+              - { label: "Année", name: "year", widget: "string" }
+              - { label: "Titre de l'événement", name: "title", widget: "string" }
+              - { label: "Description", name: "text", widget: "text" }
+
+  - name: "visites"
+    label: "Visites"
+    files:
+      - name: "visites"
+        label: "Journées de visite"
+        file: "data/visites.json"
+        fields:
+          - name: "visites"
+            label: "Dates"
+            widget: "list"
+            label_singular: "Date"
+            summary: "{{title}} — {{date}}"
+            fields:
+              - { label: "Nom de la journée", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - { label: "Places restantes", name: "places_restantes", widget: "number" }
+              - { label: "Adresse (pour le bouton Itinéraire)", name: "adresse", widget: "string", required: false }

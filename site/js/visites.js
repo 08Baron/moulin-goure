@@ -5,7 +5,7 @@ async function loadVisitesList() {
   if (!list) return;
   try {
     const res = await fetch("data/visites.json");
-    const visites = await res.json();
+    const data = await res.json(); const visites = data.visites;
     if (!visites.length) {
       list.innerHTML = "<p>Aucune date n'est programmée pour le moment. Revenez bientôt !</p>";
       return;

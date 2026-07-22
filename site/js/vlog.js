@@ -16,7 +16,7 @@ async function loadVlogList() {
   if (!list) return;
   try {
     const res = await fetch("data/vlog.json");
-    const posts = await res.json();
+    const data = await res.json(); const posts = data.posts;
 
     list.innerHTML = posts.map((p, i) => `
       <article class="vlog-post glass" data-index="${i}">

@@ -5,7 +5,7 @@ async function loadFullTimeline() {
   if (!track) return;
   try {
     const res = await fetch("data/timeline.json");
-    const events = await res.json();
+    const data = await res.json(); const events = data.events;
 
     track.innerHTML = events.map((ev, i) => `
       <div class="timeline-point" data-index="${i}" tabindex="0" role="button" aria-label="${escapeHtmlLocal(ev.title)}">

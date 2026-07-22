@@ -5,7 +5,49 @@ document.addEventListener("DOMContentLoaded", () => {
   loadTimeline();
   loadVlogPreview();
   loadNextVisit();
+  loadSettings();
 });
+
+async function loadSettings() {
+  try {
+    const res = await fetch("data/settings.json");
+    const s = await res.json();
+
+    // Logo
+    if (s.logo) {
+      const img = document.getElementById("logo-img");
+      const icon = document.getElementById("logo-icon");
+      if (img && icon) {
+        img.src = s.logo;
+        img.style.display = "inline-block";
+        icon.style.display = "none";
+      }
+    }
+
+    // Cagnotte
+    const fill = document.getElementById("cagnotte-fill");
+    const label = document.getElementById("cagnotte-label");
+    const link = document.getElementById("cagnotte-link");
+    if (fill && label && link) {
+      const pct = s.cagnotte_objectif ? Math.min(100, Math.round((s.cagnotte_montant_actuel / s.cagnotte_objectif) * 100)) : 0;
+      fill.style.width = pct + "%";
+      label.textContent = `${s.cagnotte_montant_actuel || 0} € sur ${s.cagnotte_objectif || 0} € collectés`;
+      if (s.cagnotte_lien) link.href = s.cagnotte_lien;
+    }
+
+    // Réseaux sociaux
+    const map = { facebook: "social-facebook", instagram: "social-instagram", whatsapp: "social-whatsapp" };
+    Object.keys(map).forEach(key => {
+      const el = document.getElementById(map[key]);
+      if (el && s[key]) {
+        el.href = s[key];
+        el.style.display = "inline-flex";
+      }
+    });
+  } catch (e) {
+    // Les réglages ne sont pas bloquants si le fichier est absent
+  }
+}
 
 // Hide the mill loader once the page is ready
 function initLoader() {
@@ -28,7 +70,7 @@ async function loadTimeline() {
   if (!track) return;
   try {
     const res = await fetch("data/timeline.json");
-    const events = await res.json();
+    const data = await res.json(); const events = data.events;
     track.innerHTML = events.map(ev => `
       <div class="timeline-point" title="${escapeHtml(ev.title)}">
         <div class="timeline-dot"></div>
@@ -46,7 +88,7 @@ async function loadVlogPreview() {
   if (!grid) return;
   try {
     const res = await fetch("data/vlog.json");
-    const posts = await res.json();
+    const data = await res.json(); const posts = data.posts;
     grid.innerHTML = posts.slice(0, 3).map(p => `
       <a href="post.html?id=${posts.indexOf(p)}" class="vlog-card glass hoverable">
         <img src="${p.image || 'assets/img/placeholder.jpg'}" alt="" onerror="this.style.display='none'">
@@ -67,7 +109,7 @@ async function loadNextVisit() {
   if (!el) return;
   try {
     const res = await fetch("data/visites.json");
-    const visites = await res.json();
+    const data = await res.json(); const visites = data.visites;
     if (!visites.length) { el.innerHTML = ""; return; }
     const v = visites[0];
     const mapsUrl = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(v.adresse || "");

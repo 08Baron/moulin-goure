@@ -1,3 +1,10 @@
-[
-  { "title": "Journée du patrimoine", "date": "2026-09-20", "places_restantes": 8, "adresse": "À COMPLÉTER : adresse exacte du moulin" }
-]
+{
+  "visites": [
+    {
+      "title": "Journée du patrimoine",
+      "date": "2026-09-20",
+      "places_restantes": 8,
+      "adresse": "À COMPLÉTER : adresse exacte du moulin"
+    }
+  ]
+}

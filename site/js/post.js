@@ -6,7 +6,7 @@ async function loadPost() {
 
   try {
     const res = await fetch("data/vlog.json");
-    const posts = await res.json();
+    const data = await res.json(); const posts = data.posts;
     const post = posts[id];
     if (!post) {
       document.getElementById("post-title").textContent = "Article introuvable";
