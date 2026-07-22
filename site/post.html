@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Article — Moulin Gouré</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/iconfont/tabler-icons.min.css">
+</head>
+<body class="inner-page">
+
+<!-- Filtre SVG pour l'effet "lentille de verre" sur la photo (déformation légère et statique des bords) -->
+<svg width="0" height="0" style="position:absolute">
+  <filter id="lensDistort">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="1" seed="7" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<header class="site-header glass">
+  <a href="index.html" class="logo">
+    <i class="ti ti-building-fortress" aria-hidden="true"></i>
+    <span>Moulin Gouré</span>
+  </a>
+  <nav id="main-nav">
+    <a href="vlog.html" style="color:var(--gold)">Vlog</a>
+    <a href="historique.html">Historique</a>
+    <a href="visites.html">Visites</a>
+    <a href="plan.html">Plan du moulin</a>
+    <a href="contact.html">Contact</a>
+    <button id="lang-toggle" aria-label="Changer de langue">FR ▾</button>
+  </nav>
+  <button id="nav-toggle" aria-label="Ouvrir le menu"><i class="ti ti-menu-2" aria-hidden="true"></i></button>
+</header>
+
+<section class="post-detail">
+  <a href="vlog.html" style="font-size:13px; color:var(--ink); opacity:0.7; display:inline-block; margin-bottom:14px;">← Retour au vlog</a>
+  <img id="post-image" class="post-hero-image" src="" alt="" style="display:none">
+  <div class="glass post-detail-card">
+    <p class="eyebrow" id="post-date"></p>
+    <h1 id="post-title"></h1>
+    <p class="body-text" id="post-text"></p>
+    <div class="post-actions" style="margin-top:20px;">
+      <button class="post-action" id="post-like"><i class="ti ti-heart" aria-hidden="true"></i> <span id="post-like-count">0</span></button>
+      <button class="post-action" id="post-comment"><i class="ti ti-message-circle" aria-hidden="true"></i> Commenter</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer glass">
+  <p>&copy; <span id="year"></span> Moulin Gouré · <a href="contact.html">Contact</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+  <div class="social-links">
+    <a href="#" aria-label="Facebook" title="À COMPLÉTER : lien Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+    <a href="#" aria-label="Instagram" title="À COMPLÉTER : lien Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+    <a href="#" aria-label="Groupe WhatsApp" title="À COMPLÉTER : lien groupe WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+    <a href="mailto:contact@moulingoure.fr" aria-label="Email"><i class="ti ti-mail" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/post.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Historique — Moulin Gouré</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/iconfont/tabler-icons.min.css">
+</head>
+<body>
+
+<div id="loader">
+  <svg viewBox="0 0 100 100" width="70" height="70">
+    <circle cx="50" cy="50" r="4" fill="#2E2440"/>
+    <g id="loader-blades" stroke="#2E2440" stroke-width="4" stroke-linecap="round">
+      <line x1="50" y1="50" x2="50" y2="12"/>
+      <line x1="50" y1="50" x2="88" y2="50"/>
+      <line x1="50" y1="50" x2="50" y2="88"/>
+      <line x1="50" y1="50" x2="12" y2="50"/>
+    </g>
+  </svg>
+</div>
+
+<header class="site-header glass">
+  <a href="index.html" class="logo">
+    <i class="ti ti-wind-mill" aria-hidden="true"></i>
+    <span>Moulin Gouré</span>
+  </a>
+  <nav id="main-nav">
+    <a href="vlog.html">Vlog</a>
+    <a href="historique.html" style="color:var(--gold)">Historique</a>
+    <a href="visites.html">Visites</a>
+    <a href="plan.html">Plan du moulin</a>
+    <a href="contact.html">Contact</a>
+    <button id="lang-toggle" aria-label="Changer de langue">FR ▾</button>
+  </nav>
+  <button id="nav-toggle" aria-label="Ouvrir le menu"><i class="ti ti-menu-2" aria-hidden="true"></i></button>
+</header>
+
+<section class="page-intro">
+  <p class="eyebrow">Historique</p>
+  <h1>Trois siècles d'histoire</h1>
+  <p class="lead">Clique sur un point de la frise pour découvrir l'événement.</p>
+</section>
+
+<section class="full-timeline">
+  <div class="timeline-track glass" id="full-timeline-track"></div>
+  <div id="event-detail" class="event-detail glass" hidden>
+    <button id="event-close" aria-label="Fermer">✕</button>
+    <p class="eyebrow" id="event-year"></p>
+    <h2 id="event-title"></h2>
+    <p id="event-text"></p>
+  </div>
+</section>
+
+<footer class="site-footer glass">
+  <p>&copy; <span id="year"></span> Moulin Gouré · <a href="contact.html">Contact</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+  <div class="social-links">
+    <a href="#" aria-label="Facebook" title="À COMPLÉTER : lien Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+    <a href="#" aria-label="Instagram" title="À COMPLÉTER : lien Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+    <a href="#" aria-label="Groupe WhatsApp" title="À COMPLÉTER : lien groupe WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+    <a href="mailto:contact@moulingoure.fr" aria-label="Email"><i class="ti ti-mail" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/historique.js"></script>
+</body>
+</html>
