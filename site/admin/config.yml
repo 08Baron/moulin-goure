@@ -39,7 +39,11 @@ collections:
               - { label: "Titre", name: "title", widget: "string" }
               - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
               - { label: "Texte", name: "excerpt", widget: "text" }
-              - { label: "Photo", name: "image", widget: "image", required: false }
+              - name: "images"
+                label: "Photos (glisse-en une ou plusieurs, défilables sur le site)"
+                widget: "list"
+                required: false
+                field: { label: "Photo", name: "src", widget: "image" }
 
   - name: "historique"
     label: "Historique (frise)"

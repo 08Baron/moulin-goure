@@ -18,11 +18,31 @@ async function loadPost() {
     document.getElementById("post-text").textContent = post.excerpt;
     document.title = post.title + " — Moulin Gouré";
 
-    const img = document.getElementById("post-image");
-    if (post.image) {
-      img.src = post.image;
-      img.alt = post.title;
-      img.style.display = "block";
+    const gallery = document.getElementById("post-gallery");
+    const images = post.images || [];
+    if (images.length) {
+      gallery.style.display = "block";
+      const track = document.getElementById("gallery-track");
+      const dotsWrap = document.getElementById("gallery-dots");
+      track.innerHTML = images.map(im => `<img src="${im.src}" alt="${escapeAttr(post.title)}">`).join("");
+      dotsWrap.innerHTML = images.map((_, i) => `<div class="gallery-dot${i === 0 ? ' active' : ''}"></div>`).join("");
+      if (images.length === 1) {
+        gallery.querySelectorAll(".gallery-arrow, .gallery-dots").forEach(el => el.style.display = "none");
+      }
+
+      const dots = dotsWrap.querySelectorAll(".gallery-dot");
+      function updateDots() {
+        const index = Math.round(track.scrollLeft / track.clientWidth);
+        dots.forEach((d, i) => d.classList.toggle("active", i === index));
+      }
+      track.addEventListener("scroll", () => window.requestAnimationFrame(updateDots));
+
+      gallery.querySelector(".gallery-prev").addEventListener("click", () => {
+        track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
+      });
+      gallery.querySelector(".gallery-next").addEventListener("click", () => {
+        track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+      });
     }
 
     const likeBtn = document.getElementById("post-like");
@@ -48,4 +68,8 @@ async function loadPost() {
 function formatDateP(iso) {
   if (!iso) return "";
   return new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+}
+
+function escapeAttr(str) {
+  return (str || "").replace(/"/g, "&quot;");
 }

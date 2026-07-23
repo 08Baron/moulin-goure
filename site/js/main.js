@@ -89,15 +89,18 @@ async function loadVlogPreview() {
   try {
     const res = await fetch("data/vlog.json");
     const data = await res.json(); const posts = data.posts;
-    grid.innerHTML = posts.slice(0, 3).map(p => `
+    grid.innerHTML = posts.slice(0, 3).map(p => {
+      const thumb = (p.images && p.images.length) ? p.images[0].src : 'assets/img/placeholder.jpg';
+      return `
       <a href="post.html?id=${posts.indexOf(p)}" class="vlog-card glass hoverable">
-        <img src="${p.image || 'assets/img/placeholder.jpg'}" alt="" onerror="this.style.display='none'">
+        <img src="${thumb}" alt="" onerror="this.style.display='none'">
         <div class="vlog-card-body">
           <h3>${escapeHtml(p.title)}</h3>
           <time>${formatDate(p.date)}</time>
         </div>
       </a>
-    `).join("");
+    `;
+    }).join("");
   } catch (e) {
     grid.innerHTML = "<p>Impossible de charger le vlog pour le moment.</p>";
   }
