@@ -10,6 +10,8 @@ locale: "fr"
 collections:
   - name: "reglages"
     label: "Réglages du site"
+    editor:
+      preview: false
     files:
       - name: "settings"
         label: "Logo, cagnotte et réseaux sociaux"
@@ -25,6 +27,8 @@ collections:
 
   - name: "vlog"
     label: "Vlog"
+    editor:
+      preview: false
     files:
       - name: "vlog"
         label: "Articles du vlog"
@@ -47,6 +51,8 @@ collections:
 
   - name: "historique"
     label: "Historique (frise)"
+    editor:
+      preview: false
     files:
       - name: "historique"
         label: "Événements de la frise"
@@ -64,6 +70,8 @@ collections:
 
   - name: "visites"
     label: "Visites"
+    editor:
+      preview: false
     files:
       - name: "visites"
         label: "Journées de visite"
