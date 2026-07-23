@@ -27,63 +27,45 @@ collections:
 
   - name: "vlog"
     label: "Vlog"
+    folder: "data/vlog"
+    create: true
+    slug: "{{date}}-{{slug}}"
+    identifier_field: "title"
     editor:
       preview: false
-    files:
-      - name: "vlog"
-        label: "Articles du vlog"
-        file: "data/vlog.json"
-        fields:
-          - name: "posts"
-            label: "Articles"
-            widget: "list"
-            label_singular: "Article"
-            summary: "{{title}} — {{date}}"
-            fields:
-              - { label: "Titre", name: "title", widget: "string" }
-              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
-              - { label: "Texte", name: "excerpt", widget: "text" }
-              - name: "images"
-                label: "Photos (glisse-en une ou plusieurs, défilables sur le site)"
-                widget: "list"
-                required: false
-                field: { label: "Photo", name: "src", widget: "image" }
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Texte", name: "excerpt", widget: "text" }
+      - name: "images"
+        label: "Photos (glisse-en une ou plusieurs, défilables sur le site)"
+        widget: "list"
+        required: false
+        field: { label: "Photo", name: "src", widget: "image" }
 
   - name: "historique"
     label: "Historique (frise)"
+    folder: "data/timeline"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    identifier_field: "title"
     editor:
       preview: false
-    files:
-      - name: "historique"
-        label: "Événements de la frise"
-        file: "data/timeline.json"
-        fields:
-          - name: "events"
-            label: "Événements"
-            widget: "list"
-            label_singular: "Événement"
-            summary: "{{year}} — {{title}}"
-            fields:
-              - { label: "Année", name: "year", widget: "string" }
-              - { label: "Titre de l'événement", name: "title", widget: "string" }
-              - { label: "Description", name: "text", widget: "text" }
+    fields:
+      - { label: "Année", name: "year", widget: "string" }
+      - { label: "Titre de l'événement", name: "title", widget: "string" }
+      - { label: "Description", name: "text", widget: "text" }
 
   - name: "visites"
     label: "Visites"
+    folder: "data/visites"
+    create: true
+    slug: "{{date}}-{{slug}}"
+    identifier_field: "title"
     editor:
       preview: false
-    files:
-      - name: "visites"
-        label: "Journées de visite"
-        file: "data/visites.json"
-        fields:
-          - name: "visites"
-            label: "Dates"
-            widget: "list"
-            label_singular: "Date"
-            summary: "{{title}} — {{date}}"
-            fields:
-              - { label: "Nom de la journée", name: "title", widget: "string" }
-              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
-              - { label: "Places restantes", name: "places_restantes", widget: "number" }
-              - { label: "Adresse (pour le bouton Itinéraire)", name: "adresse", widget: "string", required: false }
+    fields:
+      - { label: "Nom de la journée", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Places restantes", name: "places_restantes", widget: "number" }
+      - { label: "Adresse (pour le bouton Itinéraire)", name: "adresse", widget: "string", required: false }
