@@ -28,6 +28,8 @@ collections:
   - name: "vlog"
     label: "Vlog"
     folder: "data/vlog"
+    extension: "json"
+    format: "json"
     create: true
     slug: "{{date}}-{{slug}}"
     identifier_field: "title"
@@ -46,6 +48,8 @@ collections:
   - name: "historique"
     label: "Historique (frise)"
     folder: "data/timeline"
+    extension: "json"
+    format: "json"
     create: true
     slug: "{{year}}-{{slug}}"
     identifier_field: "title"
@@ -59,6 +63,8 @@ collections:
   - name: "visites"
     label: "Visites"
     folder: "data/visites"
+    extension: "json"
+    format: "json"
     create: true
     slug: "{{date}}-{{slug}}"
     identifier_field: "title"
