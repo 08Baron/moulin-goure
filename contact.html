@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Moulin Gouré</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/iconfont/tabler-icons.min.css">
+</head>
+<body>
+
+<div id="loader">
+  <svg viewBox="0 0 100 100" width="70" height="70">
+    <circle cx="50" cy="50" r="4" fill="#2E2440"/>
+    <g id="loader-blades" stroke="#2E2440" stroke-width="4" stroke-linecap="round">
+      <line x1="50" y1="50" x2="50" y2="12"/>
+      <line x1="50" y1="50" x2="88" y2="50"/>
+      <line x1="50" y1="50" x2="50" y2="88"/>
+      <line x1="50" y1="50" x2="12" y2="50"/>
+    </g>
+  </svg>
+</div>
+
+<header class="site-header glass">
+  <a href="index.html" class="logo">
+    <i class="ti ti-building-fortress" id="logo-icon" aria-hidden="true"></i>
+    <img id="logo-img" src="" alt="Moulin Gouré" style="display:none; height:22px; width:auto; border-radius:4px;">
+    <span>Moulin Gouré</span>
+  </a>
+  <nav id="main-nav">
+    <a href="vlog.html">Vlog</a>
+    <a href="historique.html">Historique</a>
+    <a href="visites.html">Visites</a>
+    <a href="plan.html">Plan du moulin</a>
+    <a href="contact.html" style="color:var(--gold)">Contact</a>
+    <button id="lang-toggle" aria-label="Changer de langue">FR ▾</button>
+  </nav>
+  <button id="nav-toggle" aria-label="Ouvrir le menu"><i class="ti ti-menu-2" aria-hidden="true"></i></button>
+</header>
+
+<section class="page-intro">
+  <p class="eyebrow">Contact</p>
+  <h1>Une question ? Écrivez-nous</h1>
+  <p class="lead">Réponse sous quelques jours, avec plaisir.</p>
+</section>
+
+<!--
+  Ce formulaire utilise Formspree (gratuit, sans backend à héberger) :
+  1. Créer un compte gratuit sur formspree.io
+  2. Créer un formulaire, copier son ID (ex: xayzabcd)
+  3. Remplacer "VOTRE_ID_FORMSPREE" ci-dessous par cet ID
+-->
+<form class="contact-form glass" id="contact-form" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+  <div class="form-field">
+    <label for="name">Nom</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-field">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+  <div class="form-field">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Envoyer le message</button>
+  <p id="form-status" style="margin-top:12px; font-size:13px; color:var(--text-muted);"></p>
+</form>
+
+<footer class="site-footer glass">
+  <p>&copy; <span id="year"></span> Moulin Gouré · <a href="contact.html">Contact</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+  <div class="social-links" id="footer-socials">
+    <a id="social-facebook" href="#" aria-label="Facebook" style="display:none"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+    <a id="social-instagram" href="#" aria-label="Instagram" style="display:none"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+    <a id="social-whatsapp" href="#" aria-label="Groupe WhatsApp" style="display:none"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+    <a href="mailto:contact@moulingoure.fr" aria-label="Email"><i class="ti ti-mail" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>
