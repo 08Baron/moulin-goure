@@ -1,0 +1,113 @@
+backend:
+  name: github
+  repo: "08Baron/moulin-goure"
+  branch: main
+
+media_folder: "assets/img/uploads"
+public_folder: "assets/img/uploads"
+
+locale: "fr"
+
+collections:
+  - name: "reglages"
+    label: "Réglages du site"
+    editor:
+      preview: false
+    files:
+      - name: "settings"
+        label: "Logo, cagnotte et réseaux sociaux"
+        file: "data/settings.json"
+        fields:
+          - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Remplace l'icône par défaut dans le menu, sur toutes les pages." }
+          - { label: "Lien vers la cagnotte", name: "cagnotte_lien", widget: "string", required: false }
+          - { label: "Montant actuel collecté (en €, juste le nombre)", name: "cagnotte_montant_actuel", widget: "number", required: false }
+          - { label: "Objectif de la cagnotte (en €, juste le nombre)", name: "cagnotte_objectif", widget: "number", required: false }
+          - { label: "Lien Facebook", name: "facebook", widget: "string", required: false }
+          - { label: "Lien Instagram", name: "instagram", widget: "string", required: false }
+          - { label: "Lien groupe WhatsApp", name: "whatsapp", widget: "string", required: false }
+          - { label: "Photo du widget \"Prochaine visite\" (facultative)", name: "widget_visite_image", widget: "image", required: false }
+          - { label: "Titre du widget \"lecture longue\"", name: "widget_lecture_titre", widget: "string", required: false, default: "Fatigué de lire ?" }
+          - { label: "Texte du widget \"lecture longue\"", name: "widget_lecture_texte", widget: "string", required: false, default: "Venez nous rencontrer pour une visite guidée" }
+          - { label: "Photo du widget \"lecture longue\" (facultative)", name: "widget_lecture_image", widget: "image", required: false }
+
+  - name: "vlog"
+    label: "Vlog"
+    folder: "data/vlog"
+    extension: "json"
+    format: "json"
+    create: true
+    slug: "{{date}}-{{slug}}"
+    identifier_field: "title"
+    editor:
+      preview: false
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Texte", name: "excerpt", widget: "text" }
+      - name: "images"
+        label: "Photos (glisse-en une ou plusieurs, défilables sur le site)"
+        widget: "list"
+        required: false
+        field: { label: "Photo", name: "src", widget: "image" }
+
+  - name: "historique"
+    label: "Historique (frise)"
+    folder: "data/timeline"
+    extension: "json"
+    format: "json"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    identifier_field: "title"
+    editor:
+      preview: false
+    fields:
+      - { label: "Année", name: "year", widget: "string" }
+      - { label: "Titre de l'événement", name: "title", widget: "string" }
+      - { label: "Résumé (affiché en premier)", name: "text", widget: "text" }
+      - name: "blocks"
+        label: "Contenu détaillé (facultatif) — ajoute des paragraphes et des photos dans l'ordre que tu veux"
+        widget: "list"
+        required: false
+        label_singular: "Bloc"
+        types:
+          - name: "paragraphe"
+            label: "Paragraphe de texte"
+            widget: "object"
+            fields:
+              - { label: "Texte", name: "text", widget: "text" }
+          - name: "photo"
+            label: "Photo"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "src", widget: "image" }
+              - { label: "Légende (facultative)", name: "legende", widget: "string", required: false }
+
+  - name: "galerie"
+    label: "Galerie photo"
+    folder: "data/galerie"
+    create: true
+    slug: "{{fields.legende}}-{{uuid}}"
+    identifier_field: "legende"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - { label: "Photo", name: "src", widget: "image" }
+      - { label: "Légende", name: "legende", widget: "string", required: false }
+
+  - name: "visites"
+    label: "Visites"
+    folder: "data/visites"
+    extension: "json"
+    format: "json"
+    create: true
+    slug: "{{date}}-{{slug}}"
+    identifier_field: "title"
+    editor:
+      preview: false
+    fields:
+      - { label: "Nom de la journée", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Places restantes", name: "places_restantes", widget: "number" }
+      - { label: "Adresse (pour le bouton Itinéraire)", name: "adresse", widget: "string", required: false }
