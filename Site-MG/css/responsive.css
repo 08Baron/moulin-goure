@@ -1,0 +1,293 @@
+/* Styles responsive pour le site du Moulin Gouré */
+
+/* Mobile first approach */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #6a11cb;
+        width: 100%;
+        text-align: center;
+        transition: 300ms;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Hero */
+    .hero {
+        margin-top: 70px;
+        height: auto;
+        padding: 4rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 3rem 0;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Cards and articles */
+    .article-card,
+    .gallery-item,
+    .visit-item {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 8px;
+    }
+
+    /* Form */
+    .contact-form-container,
+    .contact-info {
+        margin-bottom: 2rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Widgets flottants */
+    .floating-widgets {
+        right: 10px;
+        top: 80px;
+    }
+
+    .widget {
+        width: 250px;
+    }
+
+    /* Text size controls */
+    .text-size-controls {
+        margin-top: 1rem;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Navigation */
+    .nav-menu li a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+    }
+
+    /* Sections */
+    section {
+        padding: 4rem 0;
+    }
+
+    /* Cards */
+    .article-card,
+    .visit-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .article-content,
+    .visit-details {
+        flex: 1;
+        margin-left: 1.5rem;
+    }
+
+    /* Widgets */
+    .widget {
+        width: 260px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    /* Navigation */
+    .nav-menu {
+        display: flex !important;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-menu li a {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Hero */
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 5rem 0;
+    }
+
+    section h2 {
+        font-size: 2.5rem;
+    }
+
+    /* Cards and articles */
+    .article-card,
+    .gallery-item,
+    .visit-item {
+        margin-bottom: 2rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    /* Widgets */
+    .floating-widgets {
+        right: 20px;
+        top: 100px;
+    }
+
+    .widget {
+        width: 280px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .container {
+        width: 85%;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1400px) {
+    .container {
+        width: 80%;
+    }
+
+    .hero-content h1 {
+        font-size: 4.5rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+}
+
+/* Orientation portrait mobile */
+@media (max-width: 480px) and (orientation: portrait) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Orientation landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+/* High resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Améliorations pour les écrans haute définition */
+    .hero {
+        background-size: cover;
+    }
+
+    .gallery-item img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Print styles */
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    .navbar,
+    .footer,
+    .btn,
+    .floating-widgets {
+        display: none !important;
+    }
+
+    section {
+        page-break-inside: avoid;
+        padding: 1rem 0;
+    }
+}
