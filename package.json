@@ -1,0 +1,49 @@
+{
+  "name": "moulin-gouré-website",
+  "version": "1.0.0",
+  "description": "Site web du Moulin Gouré - Patrimoine en restauration à Louresse-Rochemenier",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server . -p 8080",
+    "dev": "concurrently \"http-server . -p 8080\" \"nodemon\"",
+    "build": "echo 'Site statique - pas de build nécessaire'",
+    "test": "echo 'No tests yet'",
+    "deploy": "echo 'Déploiement via GitHub Pages ou hébergeur'"
+  },
+  "keywords": [
+    "moulin",
+    "gouré",
+    "patrimoine",
+    "restauration",
+    "website",
+    "statique"
+  ],
+  "author": "Le Moulin Gouré Association",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moulingoure/site-moulin-gouré.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moulingoure/site-moulin-gouré/issues"
+  },
+  "homepage": "https://github.com/moulingoure/site-moulin-gouré#readme",
+  "files": [
+    "index.html",
+    "historique.html",
+    "vlog.html",
+    "galerie.html",
+    "visites.html",
+    "contact.html",
+    "mentions-legales.html",
+    "admin/",
+    "css/",
+    "js/",
+    "images/"
+  ]
+}

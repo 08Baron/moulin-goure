@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Moulin Gouré</title>
+    <meta name="description" content="Contactez le Moulin Gouré pour toute information sur les visites, la restauration ou les dons">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Le Moulin Gouré</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="historique.html">Historique</a></li>
+                <li><a href="vlog.html">Vlog</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="visites.html">Visites</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Nous Contacter</h2>
+            <p class="section-description">Vous avez des questions ? Nous serions ravis de vous répondre !</p>
+
+            <div class="contact-content">
+                <!-- Formulaire de contact -->
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Adresse email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+
+                <!-- Informations de contact -->
+                <div class="contact-info">
+                    <h3>Informations de contact</h3>
+
+                    <div class="contact-item">
+                        <h4>Adresse</h4>
+                        <p>Louresse-Rochemenier, France</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p>contact@moulingoure.fr</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Téléphone</h4>
+                        <p>+33 1 23 45 67 89</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Heures d'ouverture</h4>
+                        <p>Dimanche : 10h - 12h</p>
+                        <p>Samedi : 14h - 16h</p>
+                        <p>(Sur réservation uniquement)</p>
+                    </div>
+
+                    <!-- Carte Google Maps -->
+                    <div class="contact-map">
+                        <h4>Localisation</h4>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2759.035443432345!2d0.0!3d47.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDMwJzE2LjciTiAwwrA1JzI5LjQiVw!5e0!3m2!1sfr!2sfr!4v1685623456789!5m2!1sfr!2sfr"
+                            width="100%"
+                            height="200"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Donations -->
+            <div class="donation-section">
+                <h3>Soutenez la restauration</h3>
+                <p>Vous pouvez nous aider à financer la restauration du Moulin Gouré :</p>
+
+                <div class="fundraising-info">
+                    <div class="fundraising-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 62.5%"></div>
+                        </div>
+                        <p><span id="amount-raised">12 500 €</span> sur <span id="target-amount">20 000 €</span></p>
+                    </div>
+
+                    <a href="#cagnotte" class="btn">Faire un don</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Le Moulin Gouré</h3>
+                    <p>Moulin patrimonial en restauration à Louresse-Rochemenier</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="historique.html">Historique</a></li>
+                        <li><a href="visites.html">Visites</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Réseaux sociaux</h4>
+                    <div class="social-links">
+                        <!-- Les liens seront ajoutés dynamiquement via l'admin -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Le Moulin Gouré. Tous droits réservés.</p>
+                <p><a href="mentions-legales.html">Mentions légales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Moulin Gouré - Patrimoine en restauration</title>
+    <meta name="description" content="Découvrez l'histoire et la restauration du Moulin Gouré à Louresse-Rochemenier. Visites, actualités, galerie photo et cagnotte de financement.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Le Moulin Gouré</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#historique">Historique</a></li>
+                <li><a href="#vlog">Vlog</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#visites">Visites</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue au Moulin Gouré</h1>
+            <p>Un patrimoine en restauration à Louresse-Rochemenier</p>
+            <a href="#visites" class="btn">Réserver une visite</a>
+        </div>
+    </section>
+
+    <!-- Aperçu de la frise -->
+    <section id="frise-preview" class="frise-preview">
+        <div class="container">
+            <h2>Historique du Moulin</h2>
+            <p>Découvrez l'histoire de ce moulin patrimonial au fil du temps</p>
+            <a href="#historique" class="btn">Voir la frise chronologique</a>
+        </div>
+    </section>
+
+    <!-- Aperçu du vlog -->
+    <section id="vlog-preview" class="vlog-preview">
+        <div class="container">
+            <h2>Actualités et témoignages</h2>
+            <p>Découvrez l'avancement de la restauration</p>
+            <a href="#vlog" class="btn">Voir les articles</a>
+        </div>
+    </section>
+
+    <!-- Prochaine visite -->
+    <section id="prochaine-visite" class="next-visit">
+        <div class="container">
+            <h2>Prochaine visite disponible</h2>
+            <p class="visit-date">À compléter</p>
+            <a href="#visites" class="btn">Voir les dates disponibles</a>
+        </div>
+    </section>
+
+    <!-- Cagnotte -->
+    <section id="cagnotte" class="crowdfunding">
+        <div class="container">
+            <h2>Soutenez la restauration</h2>
+            <p>Nous avons besoin de votre aide pour sauver ce patrimoine</p>
+            <div class="fundraising-progress">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%"></div>
+                </div>
+                <p><span id="amount-raised">12 500 €</span> sur <span id="target-amount">20 000 €</span></p>
+            </div>
+            <a href="#contact" class="btn">Faire un don</a>
+        </div>
+    </section>
+
+    <!-- Widgets flottants -->
+    <div class="floating-widgets">
+        <div class="widget widget-next-visit">
+            <p>Prochaine visite : 15/06/2023</p>
+            <button class="close-widget">&times;</button>
+        </div>
+        <div class="widget widget-reminder">
+            <p>Passez un moment agréable au Moulin Gouré !</p>
+            <button class="close-widget">&times;</button>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Le Moulin Gouré</h3>
+                    <p>Moulin patrimonial en restauration à Louresse-Rochemenier</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#historique">Historique</a></li>
+                        <li><a href="#visites">Visites</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Réseaux sociaux</h4>
+                    <div class="social-links">
+                        <!-- Les liens seront ajoutés dynamiquement via l'admin -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Le Moulin Gouré. Tous droits réservés.</p>
+                <p><a href="#mentions-legales">Mentions légales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

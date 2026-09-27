@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlog - Actualités du Moulin Gouré</title>
+    <meta name="description" content="Actualités et témoignages sur la restauration du Moulin Gouré à Louresse-Rochemenier">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Le Moulin Gouré</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="historique.html">Historique</a></li>
+                <li><a href="vlog.html">Vlog</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="visites.html">Visites</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Vlog -->
+    <section id="vlog" class="vlog-section">
+        <div class="container">
+            <h2>Actualités et Témoignages</h2>
+            <p class="section-description">Découvrez l'avancement de la restauration du Moulin Gouré</p>
+
+            <!-- Articles -->
+            <div class="articles-container">
+                <!-- Article 1 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article1.jpg" alt="Travaux de restauration du Moulin Gouré">
+                    </div>
+                    <div class="article-content">
+                        <h3>Les premiers travaux de restauration</h3>
+                        <p class="article-meta">Publié le 15 avril 2023 par Jean-Claude Baron</p>
+                        <p>Nous commençons les premiers travaux de restauration du Moulin Gouré. L'objectif est de préserver ce patrimoine pour les générations futures.</p>
+                        <div class="article-actions">
+                            <a href="article1.html" class="btn">Lire la suite</a>
+                            <div class="article-stats">
+                                <span>❤️ 24</span>
+                                <span>💬 5</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article2.jpg" alt="Équipe de restauration">
+                    </div>
+                    <div class="article-content">
+                        <h3>Rencontre avec les artisans</h3>
+                        <p class="article-meta">Publié le 8 mai 2023 par Marie-Reine Baron</p>
+                        <p>Découvrez l'expertise des artisans qui participent à la restauration du Moulin Gouré. Leur savoir-faire traditionnel est essentiel pour préserver l'authenticité du patrimoine.</p>
+                        <div class="article-actions">
+                            <a href="article2.html" class="btn">Lire la suite</a>
+                            <div class="article-stats">
+                                <span>❤️ 31</span>
+                                <span>💬 8</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article3.jpg" alt="Cagnotte de financement">
+                    </div>
+                    <div class="article-content">
+                        <h3>La cagnotte de financement</h3>
+                        <p class="article-meta">Publié le 22 mai 2023 par L'équipe du Moulin Gouré</p>
+                        <p>Notre campagne de financement participatif a permis de lever 12 500 € pour les travaux de restauration. Merci à tous nos soutiens !</p>
+                        <div class="article-actions">
+                            <a href="article3.html" class="btn">Lire la suite</a>
+                            <div class="article-stats">
+                                <span>❤️ 42</span>
+                                <span>💬 12</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article4.jpg" alt="Visite du Moulin Gouré">
+                    </div>
+                    <div class="article-content">
+                        <h3>Visites guidées disponibles</h3>
+                        <p class="article-meta">Publié le 5 juin 2023 par L'équipe du Moulin Gouré</p>
+                        <p>Nous proposons désormais des visites guidées du Moulin Gouré. Découvrez l'histoire et la restauration en direct !</p>
+                        <div class="article-actions">
+                            <a href="article4.html" class="btn">Lire la suite</a>
+                            <div class="article-stats">
+                                <span>❤️ 28</span>
+                                <span>💬 6</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Contrôle de taille du texte -->
+            <div class="text-size-controls">
+                <label for="text-size">Taille du texte :</label>
+                <select id="text-size" onchange="changeTextSize()">
+                    <option value="small">Petit</option>
+                    <option value="medium" selected>Moyen</option>
+                    <option value="large">Grand</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Le Moulin Gouré</h3>
+                    <p>Moulin patrimonial en restauration à Louresse-Rochemenier</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="historique.html">Historique</a></li>
+                        <li><a href="visites.html">Visites</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Réseaux sociaux</h4>
+                    <div class="social-links">
+                        <!-- Les liens seront ajoutés dynamiquement via l'admin -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Le Moulin Gouré. Tous droits réservés.</p>
+                <p><a href="mentions-legales.html">Mentions légales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        function changeTextSize() {
+            const size = document.getElementById('text-size').value;
+            const articles = document.querySelectorAll('.article-content');
+
+            articles.forEach(article => {
+                article.classList.remove('small', 'medium', 'large');
+                article.classList.add(size);
+            });
+        }
+    </script>
+</body>
+</html>
